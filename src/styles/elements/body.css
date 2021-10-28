@@ -1,0 +1,13 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--primary-light);
+	color: var(--primary-dark);
+	font-family: 'Roboto', sans-serif;
+	line-height: 1.6;
+	min-height: 100vh;
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}

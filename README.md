@@ -13,7 +13,7 @@ JS practice project from (The Odin Project). etch-a-sketch
 <p align="center">
    Mobile
    <br></br>
-  <img src="https://raw.githubusercontent.com/osamamammar/etch-a-sketch/main/src/images/mobile.png">
+  <img height="600" src="https://raw.githubusercontent.com/osamamammar/etch-a-sketch/main/src/images/mobile.png">
 </p>
 
 ## Getting started

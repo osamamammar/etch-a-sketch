@@ -1,10 +1,6 @@
-const DEFAULT_SIZE = 16;
-const DEFAULT_COLOR = '#333333';
-const DEFAULT_MODE = 'oneColor';
-
-let size = DEFAULT_SIZE;
-let color = DEFAULT_COLOR;
-let mode = DEFAULT_MODE;
+let size = 16;
+let color = '#333333';
+let mode = 'oneColor';
 
 // functions to change the default value
 function changeSize(newSize) {
@@ -38,9 +34,9 @@ const eraserMode = document.querySelector('.controls__eraser--btn');
 const clearBtn = document.querySelector('.controls__clear--btn');
 
 // call function create grid
-createGrid(size);
+generateGrid(size);
 
-function createGrid(gridSize) {
+function generateGrid(gridSize) {
 	// clear grid
 	clearGrid();
 	// create grid columns and rows
@@ -71,30 +67,31 @@ function fillElement(e) {
 	}
 }
 
-// listen for mousemove on controller to change display value of sketch grid
-gridSizeController.addEventListener('mousemove', (e) => {
+// listen for input on controller to change display value of sketch grid
+gridSizeController.addEventListener('input', (e) => {
 	let value = e.target.value;
 	gridSizeValue.textContent = `${value} * ${value}`;
 });
+
 // listen for change on controller to change default size and create grid system
 gridSizeController.addEventListener('change', (e) => {
 	let value = e.target.value;
 	changeSize(value);
-	createGrid(size);
+	generateGrid(size);
 });
 
 //listen for change color picker
 colorPicker.addEventListener('change', (e) => changeColor(e.target.value));
 
 // clear grid sketch
-clearBtn.addEventListener('click', () => createGrid(size));
+clearBtn.addEventListener('click', () => generateGrid(size));
 
-// listen for btns and change defaults value
+// listen for btns and change ui
 oneColorMode.addEventListener('click', setColorMode);
 randomColorMode.addEventListener('click', setRandomMode);
 eraserMode.addEventListener('click', setEraserMode);
 
-// functions to change defaults values and change ui for btns
+// functions to change ui for btns
 function setColorMode() {
 	changeMode('oneColor');
 	if (mode === 'oneColor') {
